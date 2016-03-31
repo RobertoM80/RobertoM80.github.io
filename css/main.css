@@ -16,6 +16,14 @@
  *  `em` units.
  */
 @import url(https://fonts.googleapis.com/css?family=Oleo+Script:400,700);
+@import url(https://fonts.googleapis.com/css?family=Limelight);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800);
+@import url(https://fonts.googleapis.com/css?family=Archivo+Black);
+@import url(https://fonts.googleapis.com/css?family=Krona+One);
+@import url(https://fonts.googleapis.com/css?family=Kadwa);
+@import url(https://fonts.googleapis.com/css?family=Old+Standard+TT);
+@import url(https://fonts.googleapis.com/css?family=EB+Garamond);
+@import url(https://fonts.googleapis.com/css?family=Josefin+Slab:300);
 html {
   font-family: sans-serif;
   /* 1 */
@@ -421,7 +429,7 @@ body .container-fluid .main_links .round:hover, body .container-fluid .main_link
   box-shadow: inset 1px -9px 11px 8px rgba(50, 50, 50, 0.28);
 }
 
-body .container-fluid .navbar-inverse li a:hover, body .container-fluid p, body .container-fluid h1 {
+body .container-fluid .navbar-inverse li a:hover, body .container-fluid h1 {
   text-shadow: 0px 3px 4px #969696;
 }
 
@@ -430,6 +438,10 @@ body {
   background-color: #E6EAEB;
   max-width: 100%;
   overflow-x: hidden;
+}
+
+body .tooltip {
+  background-color: black;
 }
 
 body .container-fluid {
@@ -445,14 +457,13 @@ body .container-fluid {
 
 body .container-fluid .parallax-window {
   padding-top: 200px;
-  min-height: 800px;
+  min-height: 850px;
   background: transparent;
   border-top: 4px solid #2C3E50;
   padding-bottom: 40px;
 }
 
 body .container-fluid .parallax-window.secondPage {
-  /*padding-left: 5%;*/
   position: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -462,6 +473,10 @@ body .container-fluid .parallax-window.secondPage {
 
 body .container-fluid .parallax-window .navOnHover {
   border-bottom: 2px solid #E6EAEB;
+}
+
+body .container-fluid .container button {
+  margin-top: 90px;
 }
 
 body .container-fluid .container li {
@@ -502,9 +517,24 @@ body .container-fluid .navbar-inverse {
   /*background-color: $nav_background;*/
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   body .container-fluid .navbar-inverse {
-    height: 120px;
+    height: 157px;
+  }
+  body .container-fluid .navbar-inverse button:hover {
+    background-color: #6dbcdb;
+  }
+  body .container-fluid .navbar-inverse .nav:first-child {
+    margin-left: 20px;
+  }
+  body .container-fluid .navbar-inverse ul li {
+    margin-bottom: -20px;
+  }
+  body .container-fluid .navbar-inverse .navbar-collapse {
+    height: 300px;
+  }
+  body .container-fluid .navbar-inverse #logo {
+    margin-top: 36px;
   }
 }
 
@@ -520,11 +550,11 @@ body .container-fluid .navbar-inverse a {
 }
 
 body .container-fluid .navbar-inverse .active {
-  color: #E6EAEB !important;
+  color: #F4FCFF !important;
 }
 
 body .container-fluid .navbar-inverse li a:hover {
-  color: #E6EAEB !important;
+  color: #F4FCFF !important;
   -webkit-transition-duration: 0.5s;
   /* Safari */
   transition-duration: 0.5s;
@@ -546,7 +576,7 @@ body .container-fluid .navbar-collapse ul li {
   margin-top: 40px;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
   body .container-fluid .navbar-collapse {
     background-color: #6dbcdb;
     border: 1px solid #2C3E50;
@@ -561,15 +591,45 @@ body .container-fluid .navbar-toggle {
 }
 
 body .container-fluid p {
-  font-family: "Oleo Script", cursive;
-  font-size: 5em;
-  color: #6dbcdb;
-  line-height: 1.2em;
+  font-family: "Josefin Slab", serif;
+  font-size: 2.3em;
+  color: #F4FCFF;
+  background-color: rgba(140, 140, 140, 0.8);
+  padding: 20px;
+  border-radius: 15px;
+  width: 50%;
+  text-align: left;
+  line-height: 35px;
+  float: right;
+  -webkit-box-shadow: 0px -1px 63px 37px rgba(140, 138, 138, 0.8);
+  -moz-box-shadow: 0px -1px 63px 37px rgba(140, 138, 138, 0.8);
+  box-shadow: 0px -1px 63px 37px rgba(140, 138, 138, 0.8);
+}
+
+@media only screen and (max-width: 960px) {
+  body .container-fluid p {
+    font-size: 2.5em;
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  body .container-fluid p {
+    font-size: 2em;
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  body .container-fluid p {
+    font-size: 1.5em;
+    width: 70%;
+  }
 }
 
 body .container-fluid h1 {
   font-family: "Oleo Script", cursive;
-  color: #6dbcdb;
+  color: #F4FCFF;
   font-size: 5em;
   margin-bottom: 40px;
 }
@@ -577,8 +637,32 @@ body .container-fluid h1 {
 body .container-fluid .pageOne, body .container-fluid .pageTwo {
   position: relative;
   margin: auto;
-  margin-top: 30px;
+  margin-top: 20px;
   max-width: 95%;
+}
+
+@media only screen and (min-width: 769px) {
+  body .container-fluid .pageOne p {
+    float: left;
+    width: 45%;
+    font-size: 2em;
+    background: none;
+    box-shadow: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  body .container-fluid .pageOne p {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  body .container-fluid .pageOne p {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 body .container-fluid .main_links {
@@ -589,6 +673,26 @@ body .container-fluid .main_links {
   margin-top: 40px;
   height: 70px;
   z-index: 10000;
+  clear: both;
+}
+
+@media only screen and (min-width: 769px) {
+  body .container-fluid .main_links {
+    margin-left: 10px;
+    float: left;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  body .container-fluid .main_links {
+    margin-left: 1%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  body .container-fluid .main_links {
+    margin-left: 10px;
+  }
 }
 
 body .container-fluid .main_links .round {
@@ -600,6 +704,7 @@ body .container-fluid .main_links .round {
   padding-top: 12px;
   margin-right: 10px;
   margin-bottom: 100px;
+  background-color: rgba(255, 255, 255, 0.4);
   -webkit-transition-duration: 0.1s;
   /* Safari */
   transition-duration: 0.1s;
@@ -607,6 +712,27 @@ body .container-fluid .main_links .round {
   -moz-box-shadow: 0px 0px 14px 0px rgba(50, 50, 50, 0.36);
   box-shadow: 0px 0px 14px 0px rgba(50, 50, 50, 0.36);
   transition-duration: 0.5s;
+}
+
+@media only screen and (max-width: 960px) {
+  body .container-fluid .main_links .round {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  body .container-fluid .main_links .round {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  body .container-fluid .main_links .round {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 body .container-fluid .main_links .round:hover {
@@ -684,9 +810,6 @@ body .container-fluid .thumb {
   display: inline-block;
   top: 150px;
   margin: 0 10%;
-  /*@media only screen and (min-width : 780px) {
-	    margin: 0 10%;
-	  }*/
   /*  .simon {
 	  	@include thumb_style;
 	  	background-image: url('../images/simon.png');
@@ -713,17 +836,49 @@ body .container-fluid .thumb {
     }*/
 }
 
+@media only screen and (max-width: 780px) {
+  body .container-fluid .thumb {
+    margin-left: 27vw;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  body .container-fluid .thumb {
+    margin-left: 23vw;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  body .container-fluid .thumb {
+    margin-left: 19vw;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  body .container-fluid .thumb {
+    margin-left: 14vw;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  body .container-fluid .thumb {
+    margin-left: 0vw;
+  }
+}
+
 body .container-fluid .thumb .simon {
   width: 309px;
   height: 317px;
   background-size: 605px 310px;
   background-position: left top;
   transition: .2s;
-  background-image: url("../images/build/simon.png");
+  background-image: url("../images/simon.png");
+  /*images/build folder only in deployment*/
+  background-size: 200% 100%;
 }
 
 body .container-fluid .thumb .simon:hover {
-  background-image: grey url("../images/simon.png");
+  background-image: grey url("../images/build/simon.png");
   background-position: right top;
   transition: .2s;
 }
@@ -734,11 +889,13 @@ body .container-fluid .thumb .tictactoe {
   background-size: 605px 310px;
   background-position: left top;
   transition: .2s;
-  background-image: url("../images/build/tictactoe.png");
+  background-image: url("../images/tictactoe.png");
+  /*images/build folder only in deployment*/
+  background-size: 200% 100%;
 }
 
 body .container-fluid .thumb .tictactoe:hover {
-  background-image: grey url("../images/tictactoe.png");
+  background-image: grey url("../images/build/tictactoe.png");
   background-position: right top;
   transition: .2s;
 }
@@ -749,11 +906,13 @@ body .container-fluid .thumb .wikiview {
   background-size: 605px 310px;
   background-position: left top;
   transition: .2s;
-  background-image: url("../images/build/wikiview.png");
+  background-image: url("../images/wikiview.png");
+  /*images/build folder only in deployment*/
+  background-size: 200% 100%;
 }
 
 body .container-fluid .thumb .wikiview:hover {
-  background-image: grey url("../images/wikiview.png");
+  background-image: grey url("../images/build/wikiview.png");
   background-position: right top;
   transition: .2s;
 }
@@ -764,11 +923,13 @@ body .container-fluid .thumb .freeCCNews {
   background-size: 605px 310px;
   background-position: left top;
   transition: .2s;
-  background-image: url("../images/build/freeCCNews.png");
+  background-image: url("../images/freeCCNews.png");
+  /*images/build folder only in deployment*/
+  background-size: 200% 100%;
 }
 
 body .container-fluid .thumb .freeCCNews:hover {
-  background-image: grey url("../images/freeCCNews.png");
+  background-image: grey url("../images/build/freeCCNews.png");
   background-position: right top;
   transition: .2s;
 }
@@ -779,11 +940,13 @@ body .container-fluid .thumb .clock {
   background-size: 605px 310px;
   background-position: left top;
   transition: .2s;
-  background-image: url("../images/build/clock.png");
+  background-image: url("../images/clock.png");
+  /*images/build folder only in deployment*/
+  background-size: 200% 100%;
 }
 
 body .container-fluid .thumb .clock:hover {
-  background-image: grey url("../images/clock.png");
+  background-image: grey url("../images/build/clock.png");
   background-position: right top;
   transition: .2s;
 }
@@ -794,11 +957,13 @@ body .container-fluid .thumb .quotes {
   background-size: 605px 310px;
   background-position: left top;
   transition: .2s;
-  background-image: url("../images/build/quotes.png");
+  background-image: url("../images/quotes.png");
+  /*images/build folder only in deployment*/
+  background-size: 200% 100%;
 }
 
 body .container-fluid .thumb .quotes:hover {
-  background-image: grey url("../images/quotes.png");
+  background-image: grey url("../images/build/quotes.png");
   background-position: right top;
   transition: .2s;
 }
@@ -809,11 +974,13 @@ body .container-fluid .thumb .blackjack {
   background-size: 605px 310px;
   background-position: left top;
   transition: .2s;
-  background-image: url("../images/build/blackjack.png");
+  background-image: url("../images/blackjack.png");
+  /*images/build folder only in deployment*/
+  background-size: 200% 100%;
 }
 
 body .container-fluid .thumb .blackjack:hover {
-  background-image: grey url("../images/blackjack.png");
+  background-image: grey url("../images/build/blackjack.png");
   background-position: right top;
   transition: .2s;
 }
@@ -824,11 +991,13 @@ body .container-fluid .thumb .weather_app {
   background-size: 605px 310px;
   background-position: left top;
   transition: .2s;
-  background-image: url("../images/build/weather_app.png");
+  background-image: url("../images/weather_app.png");
+  /*images/build folder only in deployment*/
+  background-size: 200% 100%;
 }
 
 body .container-fluid .thumb .weather_app:hover {
-  background-image: grey url("../images/weather_app.png");
+  background-image: grey url("../images/build/weather_app.png");
   background-position: right top;
   transition: .2s;
 }
@@ -839,11 +1008,13 @@ body .container-fluid .thumb .twitch_app {
   background-size: 605px 310px;
   background-position: left top;
   transition: .2s;
-  background-image: url("../images/build/twitch_app.png");
+  background-image: url("../images/twitch_app.png");
+  /*images/build folder only in deployment*/
+  background-size: 200% 100%;
 }
 
 body .container-fluid .thumb .twitch_app:hover {
-  background-image: grey url("../images/twitch_app.png");
+  background-image: grey url("../images/build/twitch_app.png");
   background-position: right top;
   transition: .2s;
 }
@@ -854,11 +1025,13 @@ body .container-fluid .thumb .calculator {
   background-size: 605px 310px;
   background-position: left top;
   transition: .2s;
-  background-image: url("../images/build/calculator.png");
+  background-image: url("../images/calculator.png");
+  /*images/build folder only in deployment*/
+  background-size: 200% 100%;
 }
 
 body .container-fluid .thumb .calculator:hover {
-  background-image: grey url("../images/calculator.png");
+  background-image: grey url("../images/build/calculator.png");
   background-position: right top;
   transition: .2s;
 }
@@ -904,16 +1077,52 @@ body .container-fluid .thumb .progects a {
 
 @media only screen and (max-width: 770px) {
   body .container-fluid .thumb .progects a {
-    width: 359px;
-    height: 360px;
+    width: 310px;
+    height: 310px;
   }
 }
 
 body .container-fluid .goodbye p {
   width: 55%;
-  font-size: 3em;
   margin-top: 10%;
   margin-left: 10%;
+  float: left;
+  text-align: left;
+  background-color: rgba(120, 120, 120, 0.9);
+}
+
+body .container-fluid .goodbye p a {
+  color: #E6EAEB;
+}
+
+@media only screen and (min-width: 769px) {
+  body .container-fluid .goodbye p {
+    font-size: 2em;
+    width: 65%;
+    text-align: center;
+    margin-left: 2%;
+    margin-top: 12%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  body .container-fluid .goodbye p {
+    font-size: 2em;
+    width: 80%;
+    text-align: center;
+    margin-left: 10%;
+    margin-top: 100px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  body .container-fluid .goodbye p {
+    font-size: 1.3em;
+    width: 70%;
+    text-align: center;
+    margin-left: 15%;
+    margin-top: 25%;
+  }
 }
 
 body .container-fluid footer.container-fluid {
@@ -931,6 +1140,47 @@ body .container-fluid footer.container-fluid li {
 body .container-fluid footer.container-fluid h5 {
   font-family: "Oleo Script", cursive;
   color: #2C3E50;
+  margin-left: -5%;
+}
+
+@media only screen and (max-width: 960px) {
+  body .container-fluid footer.container-fluid h5 {
+    margin-left: -5%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  body .container-fluid footer.container-fluid h5 {
+    margin-left: -12%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  body .container-fluid footer.container-fluid h5 {
+    margin-left: -12%;
+  }
+}
+
+body .container-fluid footer.container-fluid .small_links {
+  clear: left;
+}
+
+@media only screen and (max-width: 960px) {
+  body .container-fluid footer.container-fluid .small_links {
+    margin-left: -11%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  body .container-fluid footer.container-fluid .small_links {
+    margin-left: 3%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  body .container-fluid footer.container-fluid .small_links {
+    margin-left: 1%;
+  }
 }
 
 body .container-fluid footer.container-fluid .small_links .sm-round {
@@ -952,15 +1202,21 @@ body .container-fluid footer.container-fluid .small_links .sm-round {
   transition-duration: 0.5s;
 }
 
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 960px) {
   body .container-fluid footer.container-fluid .small_links .sm-round {
-    margin-left: 9%;
+    margin-left: 13%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  body .container-fluid footer.container-fluid .small_links .sm-round {
+    margin-left: 8.5%;
   }
 }
 
 @media only screen and (max-width: 480px) {
   body .container-fluid footer.container-fluid .small_links .sm-round {
-    margin-left: 9%;
+    margin-left: 8.5%;
   }
 }
 

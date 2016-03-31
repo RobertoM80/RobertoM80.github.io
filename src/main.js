@@ -2,6 +2,7 @@ $(document).ready(function(){
 	var position;
 
 	$(".nav li").on('click', function(){
+		$('.navbar-collapse').removeClass("in");
 		$(this).removeClass('animated pulse');
 		$(this).addClass('animated bounce');
 	});

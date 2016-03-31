@@ -3,9 +3,18 @@
 $color_body: #E6EAEB;
 $color_link: #2C3E50;
 $color_link_hover: #E6EAEB;
-$p_color: rgba(109, 188, 219, 1); //#2C3E50;
+$p_color: #F4FCFF; // rgba(109, 188, 219, 1);
 $nav_background: rgba(109, 188, 219, 1);
 $oleo-font: 'Oleo Script', cursive;
+$lime-light: 'Limelight', cursive;
+$archivio-font: 'Archivo Black', sans-serif;
+$krona-font: 'Krona One', sans-serif;
+$open-sans: 'Open Sans', sans-serif;
+$kawda-font: 'Kadwa', serif;
+$old-standard-font: 'Old Standard TT', serif;
+$garmond-font: 'EB Garamond', serif;
+$josefin-font: 'Josefin Slab', serif;
+$text-font: $josefin-font;
 $linkedin_color: #0077B5;
 $freeCodeCamp_color: #8A503B;
 $facebook_color: #0e1f5b;
@@ -58,9 +67,10 @@ $border_color: #2C3E50;
   @each $app in $apps {
 		.#{$app} {
 			@include thumb_style;
-	    background-image: url('../images/build/#{$app}.png');
+	    background-image: url('../images/#{$app}.png');/*images/build folder only in deployment*/
+			background-size: 200% 100%;
 	    &:hover {
-	    	background-image: grey url('../images/#{$app}.png');
+	    	background-image: grey url('../images/build/#{$app}.png');
 	    	background-position: right top;
 	    	transition: .2s;
 		  };
@@ -73,12 +83,22 @@ $border_color: #2C3E50;
 /*-----mainSCSS-----*/
 
 @import url(https://fonts.googleapis.com/css?family=Oleo+Script:400,700);
-
+@import url(https://fonts.googleapis.com/css?family=Limelight); // font-family: 'Limelight', cursive;
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800); // @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800);
+@import url(https://fonts.googleapis.com/css?family=Archivo+Black); //font-family: 'Archivo Black', sans-serif;
+@import url(https://fonts.googleapis.com/css?family=Krona+One); //font-family: 'Krona One', sans-serif;
+@import url(https://fonts.googleapis.com/css?family=Kadwa); // font-family: 'Kadwa', serif;
+@import url(https://fonts.googleapis.com/css?family=Old+Standard+TT); //font-family: 'Old Standard TT', serif;
+@import url(https://fonts.googleapis.com/css?family=EB+Garamond); // font-family: 'EB Garamond', serif;
+@import url(https://fonts.googleapis.com/css?family=Josefin+Slab:300); //font-family: 'Josefin Slab', serif;
 body {
 	background-color: $color_body;
 
 	max-width: 100%;
   overflow-x: hidden;
+	.tooltip {
+		background-color: black;
+	}
 
 	.container-fluid {
 		padding: 0;
@@ -86,13 +106,12 @@ body {
 
 		.parallax-window {
 			padding-top: 200px;
-			min-height: 800px;
+			min-height: 850px;
 			background: transparent;
 			border-top: 4px solid $border_color;
 			padding-bottom: 40px;
 
 			&.secondPage {
-				/*padding-left: 5%;*/
 				position: flex;
 				flex-wrap: wrap;
 				justify-content: center;
@@ -108,6 +127,9 @@ body {
 	@extend %box_shadow_general;
 
 	.container {
+		button {
+			margin-top: 90px;
+		}
 		li {
   			width: auto;
   			list-style: none;
@@ -153,8 +175,24 @@ body {
 
 
 
-		@media only screen and (max-width : 767px) {
-			height: 120px;
+		@media only screen and (max-width : 768px) {
+			height: 157px;
+			button:hover {
+				background-color: $nav_background;
+			}
+			.nav:first-child {
+				// margin-top: 100px;
+				margin-left: 20px;
+			}
+			ul li {
+				margin-bottom: -20px;
+			}
+			.navbar-collapse{
+				height: 300px;
+			}
+			#logo {
+				margin-top: 36px;
+			}
     }
 
 		li {
@@ -169,11 +207,12 @@ body {
 		}
 
 		.active {
-			color: $color_body !important;
+			color: $p_color !important;
 		}
 
+
 		& li a:hover {
-			color: $color_link_hover !important;
+			color: $p_color !important;
 			@extend %text-shadow;
 			-webkit-transition-duration: 0.5s; /* Safari */
 		  transition-duration: 0.5s;
@@ -195,7 +234,7 @@ body {
 			margin-top: 40px;
 		}
 
-		@media only screen and (max-width : 767px) {
+		@media only screen and (max-width : 768px) {
 			background-color: $nav_background;
     	border: 1px solid $border_color;
 			& li {
@@ -209,11 +248,32 @@ body {
 	}
 
 	p {
-		font-family: $oleo-font;
-		font-size: 5em;
+		font-family: $text-font;//$krona-font;
+		font-size: 2.3em;
 		color: $p_color;
-		line-height: 1.2em;
-		@extend %text-shadow;
+		background-color: rgba(140, 140, 140, 0.8);
+		padding: 20px;
+		border-radius: 15px;
+		width: 50%;
+		text-align: left;
+		line-height: 35px;
+		float: right;
+		-webkit-box-shadow: 0px -1px 63px 37px rgba(140,138,138,0.8);
+    -moz-box-shadow: 0px -1px 63px 37px rgba(140,138,138,0.8);
+	  box-shadow: 0px -1px 63px 37px rgba(140,138,138,0.8);
+		// @extend %text-shadow;
+		@media only screen and (max-width : 960px) {
+			font-size: 2.5em;
+			width: 50%;
+		}
+		@media only screen and (max-width : 768px) {
+			font-size: 2em;
+			width: 90%;
+		}
+		@media only screen and (max-width: 480px) {
+			font-size: 1.5em;
+			width: 70%;
+		}
 	}
 
 	h1 {
@@ -227,8 +287,29 @@ body {
 	.pageOne, .pageTwo {
 		position: relative;
 		margin: auto;
-		margin-top: 30px;
+		margin-top: 20px;
 		max-width: 95%;
+	}
+
+	.pageOne p {
+		@media only screen and (min-width : 769px) {
+			float: left;
+			width: 45%;
+			font-size: 2em;
+			background: none;
+			box-shadow: none;
+		}
+		@media only screen and (max-width: 768px) {
+			width: 100%;
+			text-align: center;
+		}
+		@media only screen and (max-width: 480px) {
+			width: 100%;
+			text-align: center;
+		}
+	}
+
+	.imgFirst {
 	}
 
 	.main_links {
@@ -239,6 +320,18 @@ body {
 		margin-top: 40px;
 		height: 70px;
 		z-index: 10000;
+		clear: both;
+
+		@media only screen and (min-width : 769px) {
+			margin-left: 10px;
+			float: left;
+		}
+		@media only screen and (max-width : 768px) {
+			margin-left: 1%;
+		}
+		@media only screen and (max-width: 480px) {
+			margin-left: 10px;
+		}
 
 		.round {
 			display: block;
@@ -249,14 +342,26 @@ body {
 			padding-top: 12px;
 			margin-right: 10px;
 			margin-bottom: 100px;
+			background-color: rgba(255,255,255,0.4);
 		  -webkit-transition-duration: 0.1s; /* Safari */
 	    transition-duration: 0.1s;
 	    -webkit-box-shadow: 0px 0px 14px 0px rgba(50, 50, 50, 0.36);
 	    -moz-box-shadow:    0px 0px 14px 0px rgba(50, 50, 50, 0.36);
 	    box-shadow:         0px 0px 14px 0px rgba(50, 50, 50, 0.36);
 	    transition-duration: 0.5s;
+			@media only screen and (max-width : 960px) {
+				width: 70px;
+				height: 70px;
+			}
+			@media only screen and (max-width : 768px) {
+				width: 60px;
+				height: 60px;
+			}
+			@media only screen and (max-width: 480px) {
+				width: 50px;
+				height: 50px;
+			}
 		}
-
 		.round:hover {
 			@include basicroundlikstyle;
 	    padding-top: 5px;
@@ -322,11 +427,21 @@ body {
 		top: 150px;
 		margin: 0 10%;
 
-
-		/*@media only screen and (min-width : 780px) {
-	    margin: 0 10%;
-	  }*/
-
+		@media only screen and (max-width : 780px) {
+	    margin-left: 27vw;
+	  }
+		@media only screen and (max-width : 680px) {
+	    margin-left: 23vw;
+	  }
+		@media only screen and (max-width : 580px) {
+	    margin-left: 19vw;
+	  }
+		@media only screen and (max-width : 480px) {
+	    margin-left: 14vw;
+	  }
+		@media only screen and (max-width : 380px) {
+	    margin-left: 0vw;
+	  }
 
 
 
@@ -394,8 +509,8 @@ body {
 					height: 200px;
 				}
 				@media only screen and (max-width : 770px) {
-					width: 359px;
-				  height: 360px
+					width: 310px;
+				  height: 310px;
 				}
 		  }
 
@@ -404,9 +519,35 @@ body {
 
 	& .goodbye p {
 		width: 55%;
-		font-size: 3em;
 		margin-top: 10%;
 		margin-left: 10%;
+		float: left;
+		text-align: left;
+		background-color: rgba(120, 120, 120, 0.9);
+		a {
+			color: $color_link_hover;
+		}
+		@media only screen and (min-width : 769px) {
+			font-size: 2em;
+			width: 65%;
+			text-align: center;
+		  margin-left: 2%;
+			margin-top: 12%;
+		}
+		@media only screen and (max-width : 768px) {
+			font-size: 2em;
+			width: 80%;
+			text-align: center;
+		  margin-left: 10%;
+			margin-top: 100px;
+		}
+		@media only screen and (max-width: 480px) {
+			font-size: 1.3em;
+			width: 70%;
+			text-align: center;
+		  margin-left: 15%;
+			margin-top: 25%;
+		}
   }
 
   footer.container-fluid {
@@ -421,9 +562,29 @@ body {
   	h5 {
   		font-family: $oleo-font;
   		color: $color_link;
+			margin-left: -5%;
+			@media only screen and (max-width : 960px) {
+				margin-left: -5%;
+			}
+			@media only screen and (max-width : 768px) {
+				margin-left: -12%;
+			}
+			@media only screen and (max-width : 480px) {
+				margin-left: -12%;
+			}
 	  }
 
   	.small_links{
+			clear: left;
+			@media only screen and (max-width : 960px) {
+				margin-left: -11%;
+			}
+			@media only screen and (max-width : 768px) {
+				margin-left: 3%;
+			}
+			@media only screen and (max-width : 480px) {
+				margin-left: 1%;
+			}
   	 .sm-round {
 	  		/*display: block;*/
 	  		width: 30px;
@@ -440,12 +601,14 @@ body {
 	  		float: left;
 	  		-webkit-transition-duration: 0.5s; /* Safari */
 			  transition-duration: 0.5s;
-
-	  		@media only screen and (max-width : 780px) {
-				  margin-left: 9%;
+				@media only screen and (max-width : 960px) {
+					margin-left: 13%;
+				}
+	  		@media only screen and (max-width : 768px) {
+				  margin-left: 8.5%;
 	      }
 	      @media only screen and (max-width : 480px) {
-				  margin-left: 9%;
+				  margin-left: 8.5%;
 	      }
 
 	  		&.linkedin_link {
