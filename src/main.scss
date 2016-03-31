@@ -96,10 +96,6 @@ body {
 
 	max-width: 100%;
   overflow-x: hidden;
-	.tooltip {
-		background-color: black;
-	}
-
 	.container-fluid {
 		padding: 0;
 		margin-top: -190px;
@@ -137,7 +133,7 @@ body {
 	  .navbar-brand img {
 			width: 75px;
 			height: 70px;
-			margin-left: -20px;
+			margin-left: -110%;
 			margin-top: 16px;
 
 			&:hover {
@@ -272,7 +268,8 @@ body {
 		}
 		@media only screen and (max-width: 480px) {
 			font-size: 1.5em;
-			width: 70%;
+			width: 100%;
+			margin-top: -20%;
 		}
 	}
 
@@ -294,10 +291,14 @@ body {
 	.pageOne p {
 		@media only screen and (min-width : 769px) {
 			float: left;
-			width: 45%;
+			width: 42%;
 			font-size: 2em;
 			background: none;
 			box-shadow: none;
+			margin-top: -10%;
+		}
+		@media only screen and (min-width : 960px) {
+			margin-top: 0%;
 		}
 		@media only screen and (max-width: 768px) {
 			width: 100%;
@@ -307,9 +308,6 @@ body {
 			width: 100%;
 			text-align: center;
 		}
-	}
-
-	.imgFirst {
 	}
 
 	.main_links {
@@ -325,9 +323,11 @@ body {
 		@media only screen and (min-width : 769px) {
 			margin-left: 10px;
 			float: left;
+			margin-top: 0px;
 		}
 		@media only screen and (max-width : 768px) {
 			margin-left: 1%;
+
 		}
 		@media only screen and (max-width: 480px) {
 			margin-left: 10px;

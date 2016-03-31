@@ -440,10 +440,6 @@ body {
   overflow-x: hidden;
 }
 
-body .tooltip {
-  background-color: black;
-}
-
 body .container-fluid {
   padding: 0;
   margin-top: -190px;
@@ -487,7 +483,7 @@ body .container-fluid .container li {
 body .container-fluid .container .navbar-brand img {
   width: 75px;
   height: 70px;
-  margin-left: -20px;
+  margin-left: -110%;
   margin-top: 16px;
 }
 
@@ -623,7 +619,8 @@ body .container-fluid p {
 @media only screen and (max-width: 480px) {
   body .container-fluid p {
     font-size: 1.5em;
-    width: 70%;
+    width: 100%;
+    margin-top: -20%;
   }
 }
 
@@ -644,10 +641,17 @@ body .container-fluid .pageOne, body .container-fluid .pageTwo {
 @media only screen and (min-width: 769px) {
   body .container-fluid .pageOne p {
     float: left;
-    width: 45%;
+    width: 42%;
     font-size: 2em;
     background: none;
     box-shadow: none;
+    margin-top: -10%;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  body .container-fluid .pageOne p {
+    margin-top: 0%;
   }
 }
 
@@ -680,6 +684,7 @@ body .container-fluid .main_links {
   body .container-fluid .main_links {
     margin-left: 10px;
     float: left;
+    margin-top: 0px;
   }
 }
 
