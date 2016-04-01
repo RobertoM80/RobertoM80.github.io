@@ -85,6 +85,6 @@ module.exports = function(grunt) {
 
   // Register task(s)
   grunt.registerTask('default', ['uglify:dev', 'sass:dev', 'express', 'watch']);
-  grunt.registerTask('build', ['uglify:build', 'sass:build', 'imagemin']);
+  grunt.registerTask('build', ['uglify:build', 'sass:build']);
   // grunt.registerTask('server',['express','watch']);
 };

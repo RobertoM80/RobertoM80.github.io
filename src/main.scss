@@ -2,17 +2,10 @@
 
 $color_body: #E6EAEB;
 $color_link: #2C3E50;
-$color_link_hover: #E6EAEB;
+$color_link_hover: $color_body;
 $p_color: #F4FCFF; // rgba(109, 188, 219, 1);
 $nav_background: rgba(109, 188, 219, 1);
 $oleo-font: 'Oleo Script', cursive;
-$lime-light: 'Limelight', cursive;
-$archivio-font: 'Archivo Black', sans-serif;
-$krona-font: 'Krona One', sans-serif;
-$open-sans: 'Open Sans', sans-serif;
-$kawda-font: 'Kadwa', serif;
-$old-standard-font: 'Old Standard TT', serif;
-$garmond-font: 'EB Garamond', serif;
 $josefin-font: 'Josefin Slab', serif;
 $text-font: $josefin-font;
 $linkedin_color: #0077B5;
@@ -20,8 +13,6 @@ $freeCodeCamp_color: #8A503B;
 $facebook_color: #0e1f5b;
 $twitter_color: #55acee;
 $border_color: #2C3E50;
-
-
 
 %box_shadow_general {
 	-webkit-box-shadow: inset 6px 3px 30px 9px rgba(52, 50, 50, 0.09);
@@ -67,7 +58,7 @@ $border_color: #2C3E50;
   @each $app in $apps {
 		.#{$app} {
 			@include thumb_style;
-	    background-image: url('../images/#{$app}.png');/*images/build folder only in deployment*/
+	    background-image: url('../images/build/#{$app}.png');/*images/build folder only in deployment*/
 			background-size: 200% 100%;
 	    &:hover {
 	    	background-image: grey url('../images/build/#{$app}.png');
@@ -78,19 +69,11 @@ $border_color: #2C3E50;
   }
 }
 
-
-
 /*-----mainSCSS-----*/
 
 @import url(https://fonts.googleapis.com/css?family=Oleo+Script:400,700);
-@import url(https://fonts.googleapis.com/css?family=Limelight); // font-family: 'Limelight', cursive;
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800); // @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800);
-@import url(https://fonts.googleapis.com/css?family=Archivo+Black); //font-family: 'Archivo Black', sans-serif;
-@import url(https://fonts.googleapis.com/css?family=Krona+One); //font-family: 'Krona One', sans-serif;
-@import url(https://fonts.googleapis.com/css?family=Kadwa); // font-family: 'Kadwa', serif;
-@import url(https://fonts.googleapis.com/css?family=Old+Standard+TT); //font-family: 'Old Standard TT', serif;
-@import url(https://fonts.googleapis.com/css?family=EB+Garamond); // font-family: 'EB Garamond', serif;
 @import url(https://fonts.googleapis.com/css?family=Josefin+Slab:300); //font-family: 'Josefin Slab', serif;
+
 body {
 	background-color: $color_body;
 
@@ -142,14 +125,6 @@ body {
 	  }
 	}
 
-	/*.first {
-		position: relative;
-	}*/
-
- /* .color {
-  	background-color: blue;
-  }*/
-
   .is-sticky .navbar-inverse {
   	background-color: $nav_background;
   }
@@ -157,19 +132,6 @@ body {
 	.navbar-inverse {
 		background-color: rgba(109, 188, 219, 0);
 		transition: 1s;
-
-		/*background-color: $nav_background;*/
-
-			/*background-color: rgba(109, 188, 219, 0);*/
-			/*@extend %box_shadow_general;
-			border: 4px solid $border_color;
-			background-color: red;*/
-
-			/*background-color: $nav_background;*/
-
-
-
-
 
 		@media only screen and (max-width : 768px) {
 			height: 157px;
@@ -205,7 +167,6 @@ body {
 		.active {
 			color: $p_color !important;
 		}
-
 
 		& li a:hover {
 			color: $p_color !important;
@@ -257,7 +218,7 @@ body {
 		-webkit-box-shadow: 0px -1px 63px 37px rgba(140,138,138,0.8);
     -moz-box-shadow: 0px -1px 63px 37px rgba(140,138,138,0.8);
 	  box-shadow: 0px -1px 63px 37px rgba(140,138,138,0.8);
-		// @extend %text-shadow;
+
 		@media only screen and (max-width : 960px) {
 			font-size: 2.5em;
 			width: 50%;
@@ -327,7 +288,6 @@ body {
 		}
 		@media only screen and (max-width : 768px) {
 			margin-left: 1%;
-
 		}
 		@media only screen and (max-width: 480px) {
 			margin-left: 10px;
@@ -349,6 +309,7 @@ body {
 	    -moz-box-shadow:    0px 0px 14px 0px rgba(50, 50, 50, 0.36);
 	    box-shadow:         0px 0px 14px 0px rgba(50, 50, 50, 0.36);
 	    transition-duration: 0.5s;
+
 			@media only screen and (max-width : 960px) {
 				width: 70px;
 				height: 70px;
@@ -362,6 +323,7 @@ body {
 				height: 50px;
 			}
 		}
+
 		.round:hover {
 			@include basicroundlikstyle;
 	    padding-top: 5px;
@@ -395,8 +357,6 @@ body {
 		    background-color: #FC9E49;
 		    @extend %box_shadow_round_but;
 		}
-
-
 	}
 
 	.fa-linkedin {
@@ -443,26 +403,11 @@ body {
 	    margin-left: 0vw;
 	  }
 
-
-
     @include thums_with_hover(simon, tictactoe, wikiview, freeCCNews, clock, quotes, blackjack, weather_app, twitch_app, calculator);
-
 
 		& .calc {
 			width: 94% !important;
 		}
-
-
-	/*  .simon {
-	  	@include thumb_style;
-	  	background-image: url('../images/simon.png');
-	  	&:hover {
-	    	background-image: url('../images/simon.png');
-	    	background-position: right top;
-	    	transition: .2s;
-		  };
-	  }*/
-
 
 		&> div > a {
 			padding: 0px;
@@ -470,28 +415,10 @@ body {
 			border: 4px solid $border_color;
 			@extend %box_shadow_round_but;
 
-
-
 			&> img {
 		    border-radius: 5px;
 	    }
 	  }
-
-		/*@media only screen and (min-width : 480px) {
-
-			.progects {
-			  width: 33%;
-			  height: 33%;
-			  margin-left: 1%;
-			  float: left;
-	    }
-    }
-
-    @media only screen and (min-width : 360px) {
-			.progects {
-				margin: auto;
-			}
-    }*/
 
     .progects {
 			@media only screen and (max-width : 1180px) {
@@ -513,7 +440,6 @@ body {
 				  height: 310px;
 				}
 		  }
-
 	  }
 	}
 
@@ -585,13 +511,12 @@ body {
 			@media only screen and (max-width : 480px) {
 				margin-left: 1%;
 			}
+
   	 .sm-round {
-	  		/*display: block;*/
 	  		width: 30px;
 	  		height: 30px;
 	  		border: 1px solid $border_color;
 	  		border-radius: 50%;
-	  		/*margin: 8%;*/
 	  		margin-left: 12.2%;
 	  		margin-top: 20px;
 	  		margin-bottom: 20px;
@@ -643,8 +568,5 @@ body {
   	  }
   	}
   }
-
-
-
 }
 }
