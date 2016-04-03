@@ -98,10 +98,10 @@ body {
 				padding-top: 80px;
 		  }
 
-		.navOnHover {
-		  border-bottom: 2px solid #E6EAEB;
+		  .navOnHover {
+		    border-bottom: 2px solid #E6EAEB;
+	    }
 	  }
-	}
 
 	@extend %box_shadow_general;
 
@@ -445,8 +445,6 @@ body {
 
 	& .goodbye p {
 		width: 55%;
-		margin-top: 10%;
-		margin-left: 10%;
 		float: left;
 		text-align: left;
 		background-color: rgba(120, 120, 120, 0.9);
@@ -458,7 +456,7 @@ body {
 			width: 65%;
 			text-align: center;
 		  margin-left: 2%;
-			margin-top: 12%;
+			margin-top: 30%;
 		}
 		@media only screen and (max-width : 768px) {
 			font-size: 2em;

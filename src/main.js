@@ -1,5 +1,15 @@
 $(document).ready(function(){
 	var position;
+	var year = '';
+
+	function actualDate() {
+		dateNow = new Date();
+		year = dateNow.getFullYear();
+
+		$('.date').html(year);
+  }
+
+	actualDate();
 
 	$(".nav li").on('click', function(){
 		$('.navbar-collapse').removeClass("in");
@@ -34,12 +44,8 @@ $(document).ready(function(){
 
 	});
 
-
 	$(".navbar-inverse").sticky({topSpacing:0});
 
-	//$('body').on('scrollY', function(){
-		console.log(document.documentElement.scrollTop || document.body.scrollTop);
-	//});
 	$(window).on('scroll', function(){
 		if (((document.documentElement.scrollTop || document.body.scrollTop) > 0)&&
 		((document.documentElement.scrollTop || document.body.scrollTop) < 580)) {
@@ -47,7 +53,6 @@ $(document).ready(function(){
 		$('li a.ab').removeClass('active');
 		$('li a.port').removeClass('active');
 		$('li a.ct').removeClass('active');
-		console.log('aaaaa', document.documentElement.scrollTop || document.body.scrollTop);
         } else if (((document.documentElement.scrollTop || document.body.scrollTop) >= 580)&&
 		((document.documentElement.scrollTop || document.body.scrollTop) < 1385)) {
         $('li a.port').removeClass('active');
@@ -56,17 +61,15 @@ $(document).ready(function(){
 		$('li a.ct').removeClass('active');
         } else if (((document.documentElement.scrollTop || document.body.scrollTop) >= 1385)&&
 		((document.documentElement.scrollTop || document.body.scrollTop) < 3270)) {
-    	$('li a.port').addClass('active');
+      $('li a.port').addClass('active');
 		$('li a.hm').removeClass('active');
 		$('li a.ab').removeClass('active');
 		$('li a.ct').removeClass('active');
-    	console.log('bbbb', document.documentElement.scrollTop || document.body.scrollTop);
         } else if ((document.documentElement.scrollTop || document.body.scrollTop) >= 3270) {
     	$('li a.ct').addClass('active');
 		$('li a.hm').removeClass('active');
 		$('li a.ab').removeClass('active');
 		$('li a.port').removeClass('active');
-    	console.log('bbbb', document.documentElement.scrollTop || document.body.scrollTop);
         }
 	});
 });
