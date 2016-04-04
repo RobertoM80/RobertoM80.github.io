@@ -22,7 +22,7 @@ module.exports = function(grunt) {
      }, //uglify
      watch: {
        options: {
-         livereload: true,
+         livereload: false,
        }, //options
        js: {
          files: ['src/*.js'],
