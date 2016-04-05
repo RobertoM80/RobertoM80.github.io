@@ -209,9 +209,11 @@ body {
 		font-size: 2.3em;
 		color: $p_color;
 		background-color: rgba(140, 140, 140, 0.8);
-		padding: 20px;
+		padding: 10px;
+		position: relative;
+		top: -100px;
 		border-radius: 15px;
-		width: 50%;
+		width: 60%;
 		text-align: left;
 		line-height: 35px;
 		float: right;
@@ -220,7 +222,7 @@ body {
 	  box-shadow: 0px -1px 63px 37px rgba(140,138,138,0.8);
 
 		@media only screen and (max-width : 960px) {
-			font-size: 2.5em;
+			font-size: 2.2em;
 			width: 50%;
 		}
 		@media only screen and (max-width : 768px) {
@@ -235,11 +237,34 @@ body {
 	}
 
 	h1 {
-		font-family: $oleo-font;
+		font-family: $text-font;
 		color: $p_color;
 		font-size: 5em;
 		margin-bottom: 40px;
 		@extend %text-shadow;
+		clear: both;
+		@media only screen and (max-width: 768px) {
+			text-align: center;
+		}
+		@media only screen and (max-width: 480px) {
+			text-align: center;
+		}
+	}
+
+	h2 {
+		font-family: $text-font;
+		font-size: 3em;
+		color: $p_color;
+		clear: both;
+		display: block;
+		position: relative;
+		top: -40px;
+		@media only screen and (max-width: 768px) {
+			text-align: center;
+		}
+		@media only screen and (max-width: 480px) {
+			text-align: center;
+		}
 	}
 
 	.pageOne, .pageTwo {
@@ -256,7 +281,9 @@ body {
 			font-size: 2em;
 			background: none;
 			box-shadow: none;
-			margin-top: -10%;
+			position: relative;
+			top: -30px;
+			clear: both;
 		}
 		@media only screen and (min-width : 960px) {
 			margin-top: 0%;
@@ -264,10 +291,16 @@ body {
 		@media only screen and (max-width: 768px) {
 			width: 100%;
 			text-align: center;
+			top: auto;
+			background: none;
+			box-shadow: none;
 		}
 		@media only screen and (max-width: 480px) {
 			width: 100%;
 			text-align: center;
+			top: 20px;
+			background: none;
+			box-shadow: none;
 		}
 	}
 
@@ -282,15 +315,8 @@ body {
 		clear: both;
 
 		@media only screen and (min-width : 769px) {
-			margin-left: 10px;
 			float: left;
 			margin-top: 0px;
-		}
-		@media only screen and (max-width : 768px) {
-			margin-left: 1%;
-		}
-		@media only screen and (max-width: 480px) {
-			margin-left: 10px;
 		}
 
 		.round {
@@ -451,26 +477,27 @@ body {
 		a {
 			color: $color_link_hover;
 		}
+
 		@media only screen and (min-width : 769px) {
 			font-size: 2em;
 			width: 65%;
 			text-align: center;
 		  margin-left: 2%;
-			margin-top: 30%;
+			margin-top: 25%;
 		}
 		@media only screen and (max-width : 768px) {
 			font-size: 2em;
 			width: 80%;
 			text-align: center;
 		  margin-left: 10%;
-			margin-top: 100px;
+			margin-top: 40%;
 		}
 		@media only screen and (max-width: 480px) {
 			font-size: 1.3em;
 			width: 70%;
 			text-align: center;
 		  margin-left: 15%;
-			margin-top: 25%;
+			margin-top: 60%;
 		}
   }
 
