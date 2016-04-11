@@ -58,10 +58,10 @@ $border_color: #2C3E50;
   @each $app in $apps {
 		.#{$app} {
 			@include thumb_style;
-	    background-image: url('../images/build/#{$app}.png');/*images/build folder only in deployment*/
+	    background-image: url('../images/build/#{$app}.jpg');/*images/build folder only in deployment*/
 			background-size: 200% 100%;
 	    &:hover {
-	    	background-image: grey url('../images/build/#{$app}.png');
+	    	background-image: grey url('../images/build/#{$app}.jpg');
 	    	background-position: right top;
 	    	transition: .2s;
 		  };
@@ -70,9 +70,6 @@ $border_color: #2C3E50;
 }
 
 /*-----mainSCSS-----*/
-
-@import url(https://fonts.googleapis.com/css?family=Oleo+Script:400,700);
-@import url(https://fonts.googleapis.com/css?family=Josefin+Slab:300); //font-family: 'Josefin Slab', serif;
 
 body {
 	background-color: $color_body;
