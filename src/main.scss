@@ -426,7 +426,7 @@ body {
 	    margin-left: 0vw;
 	  }
 
-    @include thums_with_hover(simon, tictactoe, wikiview, freeCCNews, clock, quotes, blackjack, weather_app, twitch_app, calculator);
+    @include thums_with_hover(simon, tictactoe, wikiview, pollapp, clock, quotes, blackjack, weather_app, twitch_app, calculator);
 
 		& .calc {
 			width: 94% !important;
