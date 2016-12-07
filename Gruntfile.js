@@ -85,7 +85,7 @@ module.exports = function(grunt) {
 
   // Register task(s)
   grunt.registerTask('default', ['uglify:dev', 'sass:dev', 'express', 'watch']);
-  grunt.registerTask('build', ['uglify:build', 'sass:build']);//remember adding imagemin cause every time you run the grunt build command
+  grunt.registerTask('build', ['uglify:build', 'imagemin', 'sass:build']);//remember adding imagemin cause every time you run the grunt build command
   //the pictures will be copied and pastes again.
   // grunt.registerTask('server',['express','watch']);
 };
